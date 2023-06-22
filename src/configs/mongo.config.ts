@@ -11,11 +11,14 @@ export const getMongoConfig = async (
 };
 
 const getMongoString = (configService: ConfigService) => {
-	return `mongodb://${configService.get('MONGO_LOGIN')}:${configService.get(
+	return `mongodb+srv://${configService.get('MONGO_LOGIN')}:${configService.get(
 		'MONGO_PASSWORD',
-	)}@${configService.get('MONGO_HOST')}:${configService.get(
-		'MONGO_PORT',
-	)}/${configService.get('MONGO_AUTH_DB')}`;
+	)}@top-api.wy6oior.mongodb.net/?retryWrites=true&w=majority`;
+	// return `mongodb://${configService.get('MONGO_LOGIN')}:${configService.get(
+	// 	'MONGO_PASSWORD',
+	// )}@${configService.get('MONGO_HOST')}:${configService.get(
+	// 	'MONGO_PORT',
+	// )}/${configService.get('MONGO_AUTH_DB')}`;
 };
 const getMongoOptions = () => {
 	return {
